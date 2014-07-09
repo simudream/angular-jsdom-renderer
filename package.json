@@ -1,0 +1,22 @@
+{
+  "name": "angular-jsdom-renderer",
+  "version": "0.0.1",
+  "description": "Helps generate render angular pages on the server-side.",
+  "repository" : {
+	"type": "git",
+	"url": "https://github.com/angular-jsdom-renderer/angular-jsdom-renderer.git"
+  },
+  "maintainers": [
+	"Peter Flannery <@> (https://github.com/pflannery)"
+  ],
+  "contributors": [
+	"Peter Flannery <@> (https://github.com/pflannery)"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+    "jsdom": "^0.11.1"
+  },
+  "main": "src/angular-jsdom-renderer.js"
+}
