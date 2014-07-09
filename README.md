@@ -50,7 +50,7 @@ renderer.render({
 	/* url to retrieve the html from */
 	url: 'http://localhost:7559/',
 	
-	/* how long to wait until rendering the content. default 60000 */
+	/* how long to wait until rendering the content. default 5000 */
 	timeoutMs: 5000,
 	
 	/* complete callback. this = config */
