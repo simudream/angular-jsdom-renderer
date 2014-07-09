@@ -6,7 +6,7 @@
 [![Gittip donate button](http://img.shields.io/gittip/pflannery.png)](https://www.gittip.com/pflannery/ "Donate weekly to this project using Gittip")
 [![Analytics](https://ga-beacon.appspot.com/UA-47157500-1/angular-jsdom-renderer/readme)](https://github.com/pflannery/angular-jsdom-renderer)
 
-Helps generate render angular pages on the server-side.
+Helps render angular pages on the server-side.
 
 ## Installation
 
@@ -68,8 +68,6 @@ renderer.render({
 
 
 ## API
-
-######angular-jsdom-renderer module
 
 ```javascript
 
