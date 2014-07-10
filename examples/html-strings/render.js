@@ -13,10 +13,18 @@ renderer.render({
 		<div>The message is {{message}}</div>\
 	</body>\
 </html>',
+
+	/* appends html before the </head> tag*/
 	headAppend: [
 		'<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>',
-		'<script src=' + asset('controllers.js') + '></script>'
+		'<script>\
+			var module = angular.module("testApp", []);\
+			module.controller("testController", function($scope) {\
+				$scope.message = window.message;\
+			});\
+		</script>'
 	],
+	
     /* poll this selector until a match is found */
     pollSelector: 'body[data-ready=true]',
 	
