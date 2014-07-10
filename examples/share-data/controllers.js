@@ -1,4 +1,4 @@
 var module = angular.module("testApp", []);
-module.controller("testController", function($scope) {
+module.controller("testController", function ($scope) {
 	$scope.message = window.message;
 });
