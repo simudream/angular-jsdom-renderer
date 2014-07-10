@@ -77,6 +77,12 @@ npm i
 node render.js
 ```
 
+- [Using dynamic html and head scripts](examples/html-strings)
+```bash
+npm i
+node render.js
+```
+
 
 ## API
 
