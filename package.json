@@ -1,6 +1,6 @@
 {
   "name": "angular-jsdom-renderer",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Helps render angular pages on the server-side.",
   "repository" : {
 	"type": "git",

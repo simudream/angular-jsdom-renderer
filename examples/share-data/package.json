@@ -1,0 +1,11 @@
+{
+  "name": "shared-data-example",
+  private: true,
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "devDependencies": {
+    "angular-jsdom-renderer": "0.1.0"
+  }
+}
