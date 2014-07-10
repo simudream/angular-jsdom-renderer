@@ -6,9 +6,9 @@
 		// get the rootScope and destroy it before closing the window otherwise stack error occurs
 		var rootScope = window.angular.element(window.document).scope();
 		
-		//if (rootScope && rootScope.$destroy) {
-		rootScope.$destroy();
-		//}
+		if (rootScope && rootScope.$destroy) {
+			rootScope.$destroy();
+		}
 		
 		// gracefully close the window to release this process
 		window.close();
@@ -42,7 +42,7 @@
 					destroyAngularWindow(window);
 					
 					// supply the compiled html to the done fn
-					config.done(null, compiledHtml);
+					config.done(document.errors, compiledHtml);
 				}
 			, pollTimeoutMs);
 		
@@ -82,7 +82,7 @@
 						destroyAngularWindow(window);
 						
 						// supply the compiled html to the done fn
-						config.done(null, compiledHtml);
+						config.done(document.errors, compiledHtml);
 					}
 					
 				}
@@ -177,11 +177,20 @@
 					var pollId,
 						document = window.document;
 					
+					// pass any objects to the window.
+					if (config.global) {
+						for(var propertyName in config.global) {
+							window[propertyName] = config.global[propertyName]
+						}
+					}
+					
+					// listen for errors
 					document.addEventListener("error", function(errorMsg, url, lineNumber){
 						stopPoll(pollId);
 						config.done([new Error(errorMsg, url, lineNumber)], null);
 					}, false);
 					
+					// listen for the load event
 					document.addEventListener("load", function(){
 						var angular = window.angular;
 						
@@ -193,6 +202,10 @@
 						pollId = runPoll(window, document, angular, config);
 						
 					}, false);
+					
+					if (document.readyState === 'complete') {
+						config.done(document.errors, document.outerHTML);
+					}
 					
 				}
 			});
