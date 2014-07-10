@@ -2,7 +2,6 @@
 var renderer = require('angular-jsdom-renderer');
 var path = require("path");
 var asset = path.join.bind(null, __dirname);
-//console.log(asset('controllers.js'))
 
 renderer.render({
 
