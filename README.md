@@ -42,7 +42,9 @@ renderer.render({
 		console.log(compiledHtml);
 	}
 });
+```
 
+```
 // render using a timeout only
 var renderer = require('angular-jsdom-renderer');
 
@@ -64,6 +66,15 @@ renderer.render({
 	}
 });
 
+```
+
+####Examples
+
+
+- [Poll and display shared data](/examples/share-data)
+```bash
+npm i
+node render.js
 ```
 
 
