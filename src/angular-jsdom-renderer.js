@@ -1,6 +1,15 @@
 (function(exports){
 	'use strict';
 	
+	String.prototype.splice = function( idx, rem, s ) {
+		return (this.slice(0,idx) + s + this.slice(idx + Math.abs(rem)));
+	};
+	
+	function appendHtml(endTag, html, appendHtml) {
+		var endOffset = html.indexOf(endTag);
+		return html.splice(endOffset, 0, appendHtml);
+	}
+	
 	function destroyAngularWindow(window) {
 		
 		// get the rootScope and destroy it before closing the window otherwise stack error occurs
@@ -152,6 +161,21 @@
 			stopPoll = stopPollInterval;
 		}
 		
+		// append html to the head tag 
+		if (config.html && config.headAppend) {
+			config.headAppend.forEach(function(htmlToAppend) {
+				config.html = appendHtml('</head>', config.html, htmlToAppend);
+			});
+		}
+		
+		// append html to the body tag 
+		if (config.html && config.bodyAppend) {
+			config.bodyAppend.forEach(function(htmlToAppend) {
+				config.html = appendHtml('</body>', config.html, htmlToAppend);
+			});
+		}
+		
+		// begin render
 		var jsdom = require("jsdom"),
 			document = jsdom.env( 
 			{
@@ -168,15 +192,15 @@
 				/* see jsdom for more info - https://github.com/tmpvar/jsdom#how-it-works */
 				features: config.features,
 				/* see jsdom for more info - https://github.com/tmpvar/jsdom#doneerrors-window */
-				done: function(jsdomErrors, window) {
-					if (jsdomErrors) {
-						config.done(jsdomErrors, null);
+				done: function(errors, window) {
+					if (errors) {
+						config.done(errors, null);
 						return;
 					}
 					
 					var pollId,
 						document = window.document;
-					
+
 					// pass any objects to the window.
 					if (config.global) {
 						for(var propertyName in config.global) {

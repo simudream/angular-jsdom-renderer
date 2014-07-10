@@ -8,3 +8,4 @@ out/*.test.*
 out/test/
 test/
 vs.solutions/
+examples/
