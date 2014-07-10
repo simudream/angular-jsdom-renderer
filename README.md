@@ -71,7 +71,7 @@ renderer.render({
 ####Examples
 
 
-- [Poll and display shared data](/examples/share-data)
+- [Poll and display shared data](examples/share-data)
 ```bash
 npm i
 node render.js
