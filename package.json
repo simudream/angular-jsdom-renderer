@@ -1,22 +1,48 @@
 {
-  "name": "angular-jsdom-renderer",
-  "version": "0.2.0",
-  "description": "Helps render angular pages on the server-side.",
-  "repository" : {
-	"type": "git",
-	"url": "https://github.com/angular-jsdom-renderer/angular-jsdom-renderer.git"
-  },
-  "maintainers": [
-	"Peter Flannery <@> (https://github.com/pflannery)"
-  ],
-  "contributors": [
-	"Peter Flannery <@> (https://github.com/pflannery)"
-  ],
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "dependencies": {
-    "jsdom": "^0.11.1"
-  },
-  "main": "src/angular-jsdom-renderer.js"
+	"name": "angular-jsdom-renderer",
+	"version": "0.3.0",
+	"description": "Helps render angular pages on the server-side.",
+	"homepage": "https://github.com/angular-jsdom-renderer",
+	"license": {
+		"type": "MIT"
+	},
+	"keywords": [
+		"angular", 
+		"static", 
+		"render"
+	],
+	"bugs": {
+		"url": "https://github.com/pflannery/angular-jsdom-renderer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pflannery/angular-jsdom-renderer.git"
+	},
+	"author": "https://github.com/pflannery",
+	"engines": {
+		"node": ">=0.10.0"
+	},
+	"dependencies": {
+		"jsdom": "^0.11.1"
+	},
+	"devDependencies": {
+		"chai": "~1.9.1",
+		"grunt": "^0.4.5",
+		"grunt-cli": "^0.1.13",
+		"grunt-contrib-clean": "^0.5.0",
+		"grunt-contrib-copy": "^0.5.0",
+		"grunt-contrib-jshint": "^0.10.0",
+		"grunt-contrib-uglify": "^0.4.0",
+		"load-grunt-config": "^0.7.2",
+		"load-grunt-tasks": "^0.3.0",
+		"grunt-shell": "^0.6.4",
+		"joe": "^1.4.0",
+		"joe-reporter-console": "~1.2.1",
+		"joe-reporter-list": "~1.2.0"
+	},
+	"scripts": {
+		"test": "node ./test/test.all.js",
+		"test.debug": "node --debug-brk ./test/test.all.js"
+	},
+	"main": "./out/angular-jsdom-renderer.min.js"
 }

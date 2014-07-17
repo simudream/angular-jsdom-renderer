@@ -20,9 +20,9 @@ renderer.render({
 	done: function (errors, compiledHtml) {
 		if (errors) {
 			console.log("errors", errors);
-
 		}
-
-		console.log("compiled", compiledHtml);
+		console.log("Compiled content:");
+		console.log("");
+		console.log(compiledHtml);
 	}
 });

@@ -6,23 +6,23 @@ var asset = path.join.bind(null, __dirname);
 renderer.render({
 
 	/* html */
-	html: '<!DOCTYPE html>\
-<html ng-app="testApp">\
-	<head></head>\
-	<body ng-controller="testController" data-ready="{{message===123}}">\
-		<div>The message is {{message}}</div>\
-	</body>\
+	html: '<!DOCTYPE html>\n\
+<html ng-app="testApp">\n\
+	<head></head>\n\
+	<body ng-controller="testController" data-ready="{{message===123}}">\n\
+		<div>The message is {{message}}</div>\n\
+	</body>\n\
 </html>',
 
 	/* appends html before the </head> tag*/
 	headAppend: [
-		'<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>',
-		'<script>\
-			var module = angular.module("testApp", []);\
-			module.controller("testController", function($scope) {\
-				$scope.message = window.message;\
-			});\
-		</script>'
+		'<script type="text/javascript" src="'+asset('../assets/libs/angularjs/1.3.0/angular.min.js') +'"></script>\n',
+		'<script type="text/javascript" >\n\
+			var module = angular.module("testApp", []);\n\
+			module.controller("testController", function($scope) {\n\
+				$scope.message = window.message;\n\
+			});\n\
+		</script>\n'
 	],
 
 	/* poll this selector until a match is found */
@@ -37,9 +37,10 @@ renderer.render({
 	done: function (errors, compiledHtml) {
 		if (errors) {
 			console.log("errors", errors);
-
 		}
-
-		console.log("compiled", compiledHtml);
+		
+		console.log("Compiled content:");
+		console.log("");
+		console.log(compiledHtml);
 	}
 });

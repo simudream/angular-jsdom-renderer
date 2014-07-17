@@ -1,19 +1,15 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+# Temp Files
+**/*.log
+**/.docpad.db
 
-pids
-logs
-results
+# Build Files
+build/
+components/
+bower_components/
+node_modules/
+out/
 
-node_modules
-npm-debug.log
+# =====================================
+# CUSTOM MODIFICATIONS
 
-test/out/
-out/*.test.*
-vs.solutions/
+# None

@@ -1,11 +1,32 @@
-.travis*
-Makefile
-Cakefile
-History.md
+# Temp Files
+**/*.log
+**/.docpad.db
 
-out/*.tester.*
-out/*.test.*
-out/test/
-test/
-vs.solutions/
-examples/
+# Build Files
+build/
+components/
+bower_components/
+node_modules/
+
+# Development Files
+.editorconfig
+.jshintrc
+coffeelint.json
+.travis*
+Cakefile
+Makefile
+
+**/lib/
+**/src/
+**/test/
+**/examples/
+
+# Other Package Definitions
+template.js
+component.json
+bower.json
+
+# =====================================
+# CUSTOM MODIFICATIONS
+
+# None
