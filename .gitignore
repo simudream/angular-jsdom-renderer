@@ -1,6 +1,7 @@
 # Temp Files
 **/*.log
 **/.docpad.db
+**/.idea
 
 # Build Files
 build/

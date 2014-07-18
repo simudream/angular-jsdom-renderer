@@ -17,12 +17,16 @@ renderer.render({
 	},
 
 	/* complete callback. this = config */
-	done: function (errors, compiledHtml) {
+	done: function (errors, window) {
 		if (errors) {
 			console.log("errors", errors);
 		}
-		console.log("Compiled content:");
-		console.log("");
-		console.log(compiledHtml);
+
+        var document = window.document;
+        var compiledHtml = document.outerHTML;
+
+        console.log("Compiled content:");
+        console.log("");
+        console.log(compiledHtml);
 	}
 });

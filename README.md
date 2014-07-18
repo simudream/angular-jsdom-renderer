@@ -33,13 +33,18 @@ renderer.render({
 	timeoutMs: 60000,
 	
 	/* complete callback. this = config */
-	done: function(errors, compiledHtml) {
+	done: function(errors, window) {
 		if (errors) {
 			console.log(errors);
 			return;
 		}
-		
+
+        var document = window.document;
+        var compiledHtml = document.outerHTML;
+		// var angular = window.angular
 		console.log(compiledHtml);
+
+		// window will close after this callback
 	}
 });
 ```
@@ -56,13 +61,18 @@ renderer.render({
 	timeoutMs: 5000,
 	
 	/* complete callback. this = config */
-	done: function(errors, compiledHtml) {
+	done: function(errors, window) {
 		if (errors) {
 			console.log(errors);
 			return;
 		}
 		
+        var document = window.document;
+        var compiledHtml = document.outerHTML;
+		// var angular = window.angular
 		console.log(compiledHtml);
+
+		// window will close after this callback
 	}
 });
 

@@ -6,6 +6,6 @@
     "node": ">=0.10.0"
   },
   "devDependencies": {
-    "angular-jsdom-renderer": "0.3.*"
+    "angular-jsdom-renderer": "0.4.*"
   }
 }

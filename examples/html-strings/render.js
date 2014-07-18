@@ -1,7 +1,9 @@
 // render using an interval poll selector
 var renderer = require('angular-jsdom-renderer');
 var path = require("path");
-var asset = path.join.bind(null, __dirname);
+
+// use cwd as are document url location
+var fileAsset = path.join.bind(null, "file:", "", __dirname);
 
 renderer.render({
 
@@ -16,7 +18,7 @@ renderer.render({
 
 	/* appends html before the </head> tag*/
 	headAppend: [
-		'<script type="text/javascript" src="'+asset('../assets/libs/angularjs/1.3.0/angular.min.js') +'"></script>\n',
+		'<script type="text/javascript" src="'+fileAsset('../assets/libs/angularjs/1.3.0/angular.min.js') +'"></script>\n',
 		'<script type="text/javascript" >\n\
 			var module = angular.module("testApp", []);\n\
 			module.controller("testController", function($scope) {\n\
@@ -34,11 +36,14 @@ renderer.render({
 	},
 
 	/* complete callback. this = config */
-	done: function (errors, compiledHtml) {
+	done: function (errors, window) {
 		if (errors) {
 			console.log("errors", errors);
 		}
-		
+
+        var document = window.document;
+        var compiledHtml = document.outerHTML;
+
 		console.log("Compiled content:");
 		console.log("");
 		console.log(compiledHtml);
