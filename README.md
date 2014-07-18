@@ -80,19 +80,8 @@ renderer.render({
 
 ####Run the examples
 
-
 - [Poll and display shared data](examples/share-data)
-```bash
-npm i
-node render.js
-```
-
 - [Using dynamic html and head scripts](examples/html-strings)
-```bash
-npm i
-node render.js
-```
-
 
 ## API
 
