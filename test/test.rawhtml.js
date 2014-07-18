@@ -58,11 +58,8 @@ joe.describe('Raw Html', function (describe, test) {
                 }
 
                 var document = window.document;
-                var compiledHtml = document.outerHTML;
-
-                // test the content length
-                expect(compiledHtml.length).to.deep.equal(expectedLength);
-
+                //var compiledHtml = document.outerHTML;
+                
                 // test the $scope.message
                 var angular = window.angular;
                 var scopeElement = angular.element( document.querySelector("body"));
