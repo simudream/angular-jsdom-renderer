@@ -24,7 +24,7 @@ renderer.render({
 	url: 'http://localhost:7559/',
 
 	/* poll this selector until a match is found */
-	pollSelector: 'body[data-content-loaded=true]. default undefined',
+	pollSelector: 'body[data-content-loaded=true]',
 	
 	/* how often to poll the given selector. default 500 */
 	pollSelectorMs: 100,
