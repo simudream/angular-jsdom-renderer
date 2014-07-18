@@ -49,7 +49,7 @@ renderer.render({
 });
 ```
 
-```
+```javascript
 // render using a timeout only
 var renderer = require('angular-jsdom-renderer');
 
@@ -78,7 +78,7 @@ renderer.render({
 
 ```
 
-####Examples
+####Run the examples
 
 
 - [Poll and display shared data](examples/share-data)

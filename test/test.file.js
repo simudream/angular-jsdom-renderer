@@ -5,40 +5,20 @@ var expect = require('chai').expect,
     joe = require('joe');
 
 // Test
-joe.describe('Raw Html', function (describe, test) {
+joe.describe('File', function (describe, test) {
     var renderer = require('../lib/angular-jsdom-renderer'),
         path = require('path');
 
     // use cwd as are document url location
-    var fileAsset = path.join.bind(null, "file:", "", __dirname);
+    var fileAsset = path.join.bind(null, __dirname, 'assets');
 
     test("Renders shared data", function (next) {
         var testData = "Hello world!";
 
-        var testHtml = '<!DOCTYPE html>\
-                    <html ng-app="testApp">\
-                        <head></head>\
-                        <body ng-controller="testController" data-ready="{{ready}}">\
-                            <div>The message is {{message}}</div>\
-                        </body>\
-                    </html>';
-
         renderer.render({
 
-            /* html */
-            html: testHtml,
-
-            /* appends html before the </head> tag*/
-            headAppend: [
-                '<script type="text/javascript" src="' + fileAsset('assets/libs/angularjs/1.3.0/angular.min.js') + '"></script>',
-                '<script type="text/javascript" >\
-                    var module = angular.module("testApp", []);\
-                    module.controller("testController", function($scope) {\
-                        $scope.message = window.message;\
-                        $scope.ready = true;\
-                    });\
-                </script>'
-            ],
+            /* file */
+            file: fileAsset('index.html'),
 
             /* polls for this selector until a match is found */
             pollSelector: 'body[data-ready=true]',
@@ -56,8 +36,7 @@ joe.describe('Raw Html', function (describe, test) {
                 }
 
                 var document = window.document;
-                //var compiledHtml = document.outerHTML;
-                
+
                 // test the $scope.message
                 var angular = window.angular;
                 var scopeElement = angular.element( document.querySelector("body"));

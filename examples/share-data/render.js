@@ -5,7 +5,7 @@ var asset = path.join.bind(null, __dirname);
 
 renderer.render({
 
-	/* url to retrieve the html from */
+	/* file to retrieve the html from */
 	file: asset('index.html'),
 
 	/* poll this selector until a match is found */
